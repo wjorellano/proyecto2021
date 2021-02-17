@@ -19,11 +19,9 @@
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  sign_in_count          :integer          default(0), not null
-#  string                 :string(500)      default(""), not null
 #  uid                    :string(500)      default(""), not null
 #  unconfirmed_email      :string
 #  unlock_token           :string
-#  users                  :string(500)      default(""), not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #

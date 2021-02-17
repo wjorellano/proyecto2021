@@ -33,8 +33,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.datetime :locked_at
 
       ##Oauth
-      t.string :users, :provider, :string, limit: 50, null: false, default:''
-      t.string :users, :uid, :string, limit: 500, null: false, default:''
+      t.string :provider, limit: 50, null: false, default:''
+      t.string :uid, limit: 500, null: false, default:''
 
 
       t.timestamps null: false

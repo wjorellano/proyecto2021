@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # resources :courses
   # devise_for :users, 
   devise_for :users, skip: [:sessions], path_names:{sign_up:'signup', password: 'secret', confirmation: 'verification', unlock: 'unblock'}
   as :user do
@@ -6,8 +7,11 @@ Rails.application.routes.draw do
     post 'login', to: 'devise/sessions#create', as: :user_session
     delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
-
+  
   get 'home/index'
   root to:'home#index'
+  resources :courses do
+    resources :lessons, module: :courses
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

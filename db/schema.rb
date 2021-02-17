@@ -10,11 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_10_170718) do
+ActiveRecord::Schema.define(version: 2021_02_17_222917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "courses", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "titulo"
+    t.text "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lessons", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "nombre"
+    t.uuid "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_lessons_on_course_id"
+  end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -34,9 +49,7 @@ ActiveRecord::Schema.define(version: 2021_02_10_170718) do
     t.integer "failed_attempts", default: 0, null: false
     t.string "unlock_token"
     t.datetime "locked_at"
-    t.string "users", limit: 500, default: "", null: false
     t.string "provider", limit: 50, default: "", null: false
-    t.string "string", limit: 500, default: "", null: false
     t.string "uid", limit: 500, default: "", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -46,4 +59,5 @@ ActiveRecord::Schema.define(version: 2021_02_10_170718) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "lessons", "courses"
 end
