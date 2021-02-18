@@ -8,10 +8,11 @@ Rails.application.routes.draw do
     delete 'logout', to: 'devise/sessions#destroy', as: :destroy_user_session
   end
   
-  get 'home/index'
+  get 'home', to: 'home#index'
   root to:'home#index'
-  resources :courses do
-    resources :lessons, module: :courses
+  resources :courses, path:'cursos' do
+    resources :lessons, path:'clases', module: :courses
   end
+    resources :posts, path:'publicaciones'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

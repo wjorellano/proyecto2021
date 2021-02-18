@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: courses
+# Table name: posts
 #
 #  id          :uuid             not null, primary key
 #  descripcion :text
@@ -8,14 +8,20 @@
 #  titulo      :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :uuid
 #
 # Indexes
 #
-#  index_courses_on_slug  (slug) UNIQUE
+#  index_posts_on_slug     (slug) UNIQUE
+#  index_posts_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  fk_rails_...  (user_id => users.id)
 #
 require 'test_helper'
 
-class CourseTest < ActiveSupport::TestCase
+class PostTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
