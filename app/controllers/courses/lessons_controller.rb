@@ -1,4 +1,5 @@
 class Courses::LessonsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_course
   before_action :set_lesson, only: [:edit, :update, :destroy]
 
