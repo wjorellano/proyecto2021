@@ -7,7 +7,9 @@
         </a>
         <div class="hidden lg:block">
           <div class="ml-6 flex items-baseline">
-            <a starts_with="/series" class="ml-4 px-3 py-2 rounded-full text-sm font-medium focus:outline-none text-gray-300 focus:text-white hover:bg-gray-700 focus:bg-gray-700" href="/">Home</a>
+            <a starts_with="/" class="ml-4 px-3 py-2 rounded-full text-sm font-medium focus:outline-none text-gray-300 focus:text-white hover:bg-gray-700 focus:bg-gray-700" href="/">Home</a>
+            <%= link_to  "Cursos", courses_path, class:"ml-4 px-3 py-2 rounded-full text-sm font-medium focus:outline-none text-gray-300 focus:text-white hover:bg-gray-700 focus:bg-gray-700" %>
+            <%= link_to  "Blog", posts_path, class:"ml-4 px-3 py-2 rounded-full text-sm font-medium focus:outline-none text-gray-300 focus:text-white hover:bg-gray-700 focus:bg-gray-700" %>
          <%#<span x-data="{ open: false }" @click.away="open = false">
               <a @click="open = !open" class="cursor-pointer ml-4 px-3 py-2 rounded text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700">item4</a>
               <div
@@ -60,7 +62,7 @@
               </svg>
             <%#end%>
             </button>
-            <div x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 h-full w-full z-10"></div>
+            <div x-show="dropdownOpen" @click="dropdownOpen = false" class=" fixed inset-0 h-full w-full z-10"></div>
               <div x-show="dropdownOpen" class="menu absolute right-0 mt-2 py-2 menu-notificaions bg-white rounded-lg shadow-xl z-20">
                 <h6 class="block px-4 py-2 text-sm capitalize font-bold  hover:bg-gray">Notificaciones (<%# current_user.unviewed_notifications_count%>)</h6>
               </div>

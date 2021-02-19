@@ -4,11 +4,11 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :titulo %>
-    <%= f.input :descripcion %>
+    <%= f.text_field :titulo, class:"border", placeholder:"Titulo de la publicación" %>
+    <%= f.text_area  :descripcion, class:"border-transparent rounded border w-full h-64", placeholder:"Que estas pensando?"%>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-actions ">
+    <%= f.button :submit, "Publicar", class:"rounded py-1 px-2 text-gray-200 bg-gray-800" %>
   </div>
 <% end %>

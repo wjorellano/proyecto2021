@@ -1,6 +1,8 @@
 module.exports = {
   theme: {
-    extend: {}
+    extend: {
+      backgroundColor: ['group-focus'],
+    }
   },
   variants: {},
   plugins: []

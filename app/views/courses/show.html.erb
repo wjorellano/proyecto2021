@@ -1,21 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="row border">
+  <div class="col-md-4 col-sm-12 border">col</div>
+  <div class="col-md-6 col-sm-12 border">col</div>
+  <div class="w-100 col-sm-12 border">hola</div>
+  <div class="col-md-2 col-sm-12 border">col</div>
+  <div class="col-md-8 col-sm-12 border">col</div>
+</div>
+      <h1 class="text-3xl font-semibold text-gray-800"><%= @course.titulo %></h1>
 
-<p>
-  <strong>Titulo:</strong>
-  <%= @course.titulo %>
-</p>
+      <p class="text-lg"><%#@course.descripcion %></p>
 
-<p>
-  <strong>Descripcion:</strong>
-  <%= @course.descripcion %>
-</p>
 
-<% @lessons.each do |l| %>
-<%= link_to course_lessons_path(@course) do%>
-<%= l.nombre %>
-<% end %>
-<br>
-<% end %>
-<br>
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+    <ul class="">
+      <%# @lessons.each do |l| %>
+        <li class="">
+          <%# link_to course_lessons_path(@course) do%><%#l.nombre%><%#end%>
+        </li>
+      <%# end %>
+    </ul>
+
+<%# link_to 'Edit', edit_course_path(@course) %> 
+<%# link_to 'Back', courses_path %> 
