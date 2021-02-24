@@ -5,11 +5,13 @@ class CoursesController < ApplicationController
   # GET /courses or /courses.json
   def index
     @courses = Course.all
+    @title = "Cursos"
   end
 
   # GET /courses/1 or /courses/1.json
   def show
     @lessons = Lesson.all
+    @title = @course.titulo
   end
 
   # GET /courses/new

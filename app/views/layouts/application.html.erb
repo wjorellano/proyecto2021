@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="es-CO">
   <head>
+    <%-signed_in? %>
+      <title><%= @titulo %></title>
+    <%end%>
     <title>Proyecto2021</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,7 +15,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body class="bg-gray-200">
-    <% if signed_in? %>
+    <%- if signed_in? %>
       <%= render 'partials/navbar' %>
     <div class="mt-20 w-full">
       <%=yield %>

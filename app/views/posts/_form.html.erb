@@ -4,8 +4,8 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.text_field :titulo, class:"border", placeholder:"Titulo de la publicación" %>
-    <%= f.text_area  :descripcion, class:"border-transparent rounded border w-full h-64", placeholder:"Que estas pensando?"%>
+    <%= f.text_field :titulo, class:"focus:outline-none mt-2 mb-2", placeholder:"Titulo de la publicación" %>
+    <%= f.text_area  :descripcion, class:"focus:outline-none border-transparent rounded border w-full h-64", placeholder:"Que estas pensando?"%>
   </div>
 
   <div class="form-actions ">
