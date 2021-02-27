@@ -33,6 +33,7 @@
               <div class="mt-8">
                 <div class="mx-auto max-w-lg">
                   <div class="py-2">
+                  <%= f.input :username, label: "username" %>
                   <span><%= f.label :email, "Correo electronico", 
                                     class:"px-1 text-sm text-gray-600" %></span>
                   <%= f.email_field :email,
@@ -71,7 +72,7 @@
                                       required: true,
                                       input_html: { autocomplete: "new-password" } %>
               <div class="mt-2">
-                <%= f.button :submit, "Log in", class:"cursor-pointer mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"%>
+                <%= f.button :submit, "Sign up", class:"cursor-pointer mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"%>
               </div> 
                 <div class="mt-4 flex items-center justify-between">
                   <span class="border-b w-1/5 md:w-1/4"></span>

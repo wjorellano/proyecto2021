@@ -78,5 +78,6 @@ gem 'omniauth-github', '~> 1.4'
 gem 'activerecord-session_store', '~> 1.1', '>= 1.1.3'
 gem 'jquery-rails', '~> 4.4'
 gem 'sendgrid', '~> 1.2', '>= 1.2.4'
+gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
 
 # gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
