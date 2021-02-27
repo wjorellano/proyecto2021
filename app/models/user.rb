@@ -39,10 +39,13 @@
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 class User < ApplicationRecord
+    extend FriendlyId
+    friendly_id :username, use: :slugged
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
+         :confirmable, :lockable, :timeoutable,
          :omniauthable, omniauth_providers: [:github]
   
   has_many :posts 
@@ -52,6 +55,10 @@ class User < ApplicationRecord
       user.email = provider_data.info.email
       user.password = Devise.friendly_token[0, 20]
     end
+  end
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
   end
 
 end
