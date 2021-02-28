@@ -52,6 +52,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'annotate'
+  gem 'letter_opener', '~> 1.7'
 end
 
 group :test do
@@ -80,5 +81,6 @@ gem 'jquery-rails', '~> 4.4'
 gem 'sendgrid', '~> 1.2', '>= 1.2.4'
 gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
 gem 'draper', '~> 4.0', '>= 4.0.1'
+gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.5'
 
 # gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
