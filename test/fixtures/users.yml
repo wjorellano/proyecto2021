@@ -26,7 +26,7 @@
 #  uid                    :string(500)      default(""), not null
 #  unconfirmed_email      :string
 #  unlock_token           :string
-#  username               :string
+#  username               :string           default("")
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #

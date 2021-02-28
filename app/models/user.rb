@@ -26,7 +26,7 @@
 #  uid                    :string(500)      default(""), not null
 #  unconfirmed_email      :string
 #  unlock_token           :string
-#  username               :string
+#  username               :string           default("")
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -39,22 +39,23 @@
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
 #
 class User < ApplicationRecord
-    extend FriendlyId
-    friendly_id :username, use: :slugged
+  rolify
+  extend FriendlyId
+  friendly_id :username, use: :slugged
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable,
          :omniauthable, omniauth_providers: [:github]
-  
-  has_many :posts 
 
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  has_many :posts
+
+  validates :username, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validate :validate_username
 
-  
+
   def self.create_from_provider_data(provider_data)
     where(provider: provider_data.provider, uid: provider_data.uid).first_or_create do |user|
       user.email = provider_data.info.email
@@ -86,5 +87,5 @@ class User < ApplicationRecord
       errors.add(:username, :invalid)
     end
   end
-  
+
 end
