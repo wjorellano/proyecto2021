@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1' #metodos de ayudas para rails
+  gem 'factory_bot_rails', '~> 6.1' # crear objestos para la DB
+  gem 'rspec-rails', '~> 4.0', '>= 4.0.2'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -74,4 +77,8 @@ gem 'omniauth'
 gem 'omniauth-github', '~> 1.4'
 gem 'activerecord-session_store', '~> 1.1', '>= 1.1.3'
 gem 'jquery-rails', '~> 4.4'
+gem 'sendgrid', '~> 1.2', '>= 1.2.4'
+gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
+gem 'draper', '~> 4.0', '>= 4.0.1'
+
 # gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'

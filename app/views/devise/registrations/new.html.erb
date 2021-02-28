@@ -4,7 +4,7 @@
     <div class="max-w-sm mx-auto px-6">
       <div class="relative flex flex-wrap">
         <div class="w-full relative">
-          <div class="mt-6">
+          <div class="-mt-4">
             <div class="mb-5 pb-1border-b-2 text-center font-base text-gray-700" data-placeholder>
             <h1 class="text-2xl font-semibold text-gray-700 text-center">LearningCode</h1>
             <p class="text-xl text-gray-600 text-center">Bienvenido!</p>
@@ -33,12 +33,16 @@
               <div class="mt-8">
                 <div class="mx-auto max-w-lg">
                   <div class="py-2">
+                  <%= f.label :username, "Username",
+                              class:"px-1 text-sm text-gray-600" %>
+                  <%= f.text_field :username,
+                                    class:"mb-2 text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none",
+                                    autofocus: true %> 
                   <span><%= f.label :email, "Correo electronico", 
                                     class:"px-1 text-sm text-gray-600" %></span>
                   <%= f.email_field :email,
                                     class:"text-md block px-3 py-2 rounded-lg w-full bg-white border-2 border-gray-300 placeholder-gray-600 shadow-md focus:placeholder-gray-500 focus:bg-white focus:border-gray-600 focus:outline-none",
                                     required: false,
-                                    autofocus: true,
                                     input_html: { autocomplete: "email" } %>
                   <div class="py-2" x-data="{ show: true }">
                   <span><%= f.label :password, "Contraseña",
@@ -71,7 +75,7 @@
                                       required: true,
                                       input_html: { autocomplete: "new-password" } %>
               <div class="mt-2">
-                <%= f.button :submit, "Log in", class:"cursor-pointer mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"%>
+                <%= f.button :submit, "Sign up", class:"cursor-pointer mt-3 text-lg font-semibold bg-gray-800 w-full text-white rounded-lg px-6 py-3 block shadow-xl hover:text-white hover:bg-black"%>
               </div> 
                 <div class="mt-4 flex items-center justify-between">
                   <span class="border-b w-1/5 md:w-1/4"></span>

@@ -36,6 +36,11 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :provider, limit: 50, null: false, default:''
       t.string :uid, limit: 500, null: false, default:''
 
+      t.string :username, default: ""
+      t.string :nombre
+      t.string :apellido
+      t.string :bio
+
 
       t.timestamps null: false
     end

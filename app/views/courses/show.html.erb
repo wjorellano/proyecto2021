@@ -1,9 +1,25 @@
-<div class="row border">
-  <div class="col-md-4 col-sm-12 border">col</div>
-  <div class="col-md-6 col-sm-12 border">col</div>
-  <div class="w-100 col-sm-12 border">hola</div>
-  <div class="col-md-2 col-sm-12 border">col</div>
-  <div class="col-md-8 col-sm-12 border">col</div>
+<style media="screen">
+  .large{
+    width:13%;
+    border-radius:8px
+  }
+  .item:hover{
+    background:rgb(219, 219, 219);
+    color: white;
+    border-radius: 5px;
+  }
+</style>
+<div class="row bg-white shadow border large ml-8 rounded-md">
+  <div class="col-md-12">
+    <ol class="">
+      <li class="text-gray-600 p-1 px-3 item">Perfil</li>
+      <li class="text-gray-600 p-1 px-3 item">configuraciones</li>
+      <li class="text-gray-600 p-1 px-3 item">cambiar contraseña</li>
+      <li class="text-gray-600 p-1 px-3 item">Mi cuenta</li>
+      <li class="text-gray-600 p-1 px-3 item">borrar cuenta</li>
+    </ol>
+  </div>
+
 </div>
       <h1 class="text-3xl font-semibold text-gray-800"><%= @course.titulo %></h1>
 
@@ -18,5 +34,5 @@
       <%# end %>
     </ul>
 
-<%# link_to 'Edit', edit_course_path(@course) %> 
-<%# link_to 'Back', courses_path %> 
+<%# link_to 'Edit', edit_course_path(@course) %>
+<%# link_to 'Back', courses_path %>
