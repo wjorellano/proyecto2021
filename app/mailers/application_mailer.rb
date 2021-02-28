@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: ENV['EMAIL']
+  default from: Rails.application.credentials.dig(:gmail, :correo)
   layout 'mailer'
 end
