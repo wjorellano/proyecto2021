@@ -1,3 +1,4 @@
-module Notificable < ActiveSupport::Concerns
+module Notificable
+    extend ActiveSupport::Concern
 
 end    

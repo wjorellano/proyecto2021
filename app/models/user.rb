@@ -44,10 +44,9 @@ class User < ApplicationRecord
   friendly_id :username, use: :slugged
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
-         :confirmable, :lockable, :timeoutable,
-         :omniauthable, omniauth_providers: [:github]
+  devise :database_authenticatable, :password_archivable, :registerable,
+         :recoverable, :rememberable, :validatable,:confirmable, :lockable,
+         :timeoutable, :omniauthable, omniauth_providers: [:github]
 
   has_many :posts
 
