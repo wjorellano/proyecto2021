@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_035648) do
+ActiveRecord::Schema.define(version: 2021_03_02_032126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -68,6 +68,15 @@ ActiveRecord::Schema.define(version: 2021_03_01_035648) do
     t.datetime "updated_at", null: false
     t.index ["item_type", "item_id"], name: "index_notifications_on_item_type_and_item_id"
     t.index ["user_id"], name: "index_notifications_on_user_id"
+  end
+
+  create_table "old_passwords", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "encrypted_password", null: false
+    t.string "password_archivable_type", null: false
+    t.integer "password_archivable_id", null: false
+    t.string "password_salt"
+    t.datetime "created_at"
+    t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivable"
   end
 
   create_table "posts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

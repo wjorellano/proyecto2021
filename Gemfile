@@ -82,5 +82,5 @@ gem 'sendgrid', '~> 1.2', '>= 1.2.4'
 gem 'devise-i18n', '~> 1.9', '>= 1.9.2'
 gem 'draper', '~> 4.0', '>= 4.0.1'
 gem 'delayed_job_active_record', '~> 4.1', '>= 4.1.5'
-
+gem 'devise-security', '~> 0.15.0'
 # gem 'devise', github: 'heartcombo/devise', branch: 'ca-omniauth-2'
